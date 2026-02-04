@@ -1,0 +1,12 @@
+#Angular
+TripNowAngular/.idea/
+TripNowAngular/node_modules/
+TripNowAngular/.env
+TripNowAngular/.angular/
+TripNowAngular/public/fonts/
+TripNowAngular/public/icons/
+
+#Django
+DjangoTripNow/.venv/
+DjangoTripNow/.env
+DjangoTripNow/.idea/

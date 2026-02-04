@@ -1,0 +1,104 @@
+.fondo{
+  background-image: url(../../../../public/images/playa1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+
+}
+
+.t-search {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.sombra{
+  box-shadow: rgba(0, 0, 0, 0.32) 5px 5px 5px;
+}
+
+.sec-search{
+  font-size: 20px;
+  font-weight: normal;
+  background-color: #f8f8f8;
+
+}
+
+.shw-btn:hover{
+  background-color: #000000;
+  color: white;
+}
+
+.t-viaje{
+  width: 180px;
+  height: 34px;
+
+}
+
+.f-busqueda{
+  background: #ffffff;
+
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(237, 237, 237) 100%);
+}
+
+.fto{
+  width: 240px;
+  height: 170px;
+
+
+
+
+}
+
+.t-font{
+  font-size: 17px;
+  font-weight: bold;
+
+
+}
+
+.mas{
+  border: 1px #c3c3c3 solid;
+  border-radius: 4px;
+  width: 70px;
+  height: 25px;
+
+}
+
+.mas:hover{
+  background-color: black;
+  color: white;
+}
+
+.f-card {
+  background-color: white;
+}
+
+.f-card:hover{
+  border: 2px solid #b9d6ff;
+  background-color: #e2ebff;
+
+}
+
+.f-res{
+  border-radius: 30px;
+  width: 400px;
+  border: none;
+}
+
+.f-gente{
+  height: 200px;
+  width: 200px;
+
+}
+
+.card-gente{
+  height: 300px;
+  width: 540px;
+  color: black;
+  background-color: white;
+}
+
+.card-gente:hover{
+  border: 2px solid #83a4fb;
+  background-color: #b4c8ff;
+}
