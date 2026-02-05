@@ -25,6 +25,10 @@ export const routes: Routes = [
                 path: 'notificaciones',
                 loadComponent: () => import('./features/notificaciones/notificaciones').then((c => c.Notificaciones)),
                 title: "notificaciones",
+            },
+            {
+                path: 'login',
+                loadComponent: () => import('./features/auth/login/login').then((c => c.Login)),
             }
 
 
