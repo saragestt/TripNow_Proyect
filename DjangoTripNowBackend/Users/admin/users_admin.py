@@ -15,6 +15,29 @@ class CustomUserAdmin(UserAdmin):
     list_editable = ('is_active',)
 
     ordering = ('email',)
+    
+    fieldsets = [
+        ('Información personal', {
+            'fields': [
+                'email', 'nombre', 'apellidos', 'is_active', 'info_personal',
+            ],
+        }),
+    ]
+
+    add_fieldsets = (
+        ("Información personal", {
+            'classes': ('wide',),
+            'fields': ('nombre', 'apellidos', 'personal_info')}
+         ),
+        ("Información de iniciar sesión", {
+            'classes': ('wide',),
+            'fields': ('email', 'password1', 'password2')}
+         ),
+        ("Configuración", {
+            'classes': ('wide',),
+            'fields': ('role', 'is_active', 'is_staff', 'is_superuser',)}
+         ),
+    )
 
 
 admin.site.register(CustomUser,CustomUserAdmin)

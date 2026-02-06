@@ -1,7 +1,8 @@
 .logo-tn{
   font-size: 40px;
   font-weight: bold;
-  font-family: MuseoModerno-Regular;
+  font-family: MuseoModerno-Regular, sans-serif;
+  color: #a3b0ff;
 }
 
 .avion{
@@ -20,4 +21,14 @@
   opacity: inherit;
 
 
+}
+
+.menu p {
+  cursor: pointer;
+}
+
+.menu p:hover {
+  transition: .25s all;
+  text-decoration: underline 5px solid #a3b0ff;
+  text-underline-offset: 10px;
 }
