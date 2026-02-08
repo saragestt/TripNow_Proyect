@@ -145,7 +145,7 @@ USE_TZ = True
 ASSETS_DIR = BASE_DIR / 'assets'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [ASSETS_DIR / 'static']
+STATICFILES_DIRS = [ASSETS_DIR]
 STATIC_ROOT = ASSETS_DIR / 'collected_static'
 
 MEDIA_URL = '/media/'

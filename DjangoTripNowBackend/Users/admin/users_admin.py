@@ -10,7 +10,7 @@ class InfoPersonalInLine(admin.StackedInline):
     verbose_name_plural = 'Datos personales'
 
 class CustomUserAdmin(UserAdmin):
-    list_display = ('email', 'nombre', 'apellidos', 'is_active', 'info_personal')
+    list_display = ('email', 'nombre', 'apellidos', 'is_active', 'info_personal' ,'prefer_personal')
     list_per_page = 20
     list_editable = ('is_active',)
 
@@ -19,7 +19,7 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = [
         ('Información personal', {
             'fields': [
-                'email', 'nombre', 'apellidos', 'is_active', 'info_personal',
+                'email', 'nombre', 'apellidos', 'is_active', 'info_personal', 'prefer_personal'
             ],
         }),
     ]
@@ -27,7 +27,7 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = (
         ("Información personal", {
             'classes': ('wide',),
-            'fields': ('nombre', 'apellidos', 'personal_info')}
+            'fields': ('nombre', 'apellidos', 'personal_info', 'prefer_personal')}
          ),
         ("Información de iniciar sesión", {
             'classes': ('wide',),
@@ -35,7 +35,7 @@ class CustomUserAdmin(UserAdmin):
          ),
         ("Configuración", {
             'classes': ('wide',),
-            'fields': ('role', 'is_active', 'is_staff', 'is_superuser',)}
+            'fields': ('is_active', 'is_staff', 'is_superuser',)}
          ),
     )
 

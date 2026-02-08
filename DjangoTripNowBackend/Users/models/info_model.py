@@ -6,12 +6,12 @@ class InfoModel(models.Model):
     fecha_nacimiento = models.DateField(max_length=10, blank=False, null=False)
     nacionalidad = models.CharField(max_length=30, blank=False, null=False)
     pasaporte = models.CharField(max_length=30, blank=True, null=True)
-
+    codigo_postal = models.CharField(max_length=10, blank=True, null=True)
 
 
 
     def __str__(self):
-        return f"{self.telefono} - {self.fecha_nacimiento} - {self.nacionalidad} - {self.direccion} - {self.pasaporte}"
+        return f"{self.telefono} - {self.fecha_nacimiento} - {self.nacionalidad} - {self.direccion} - {self.pasaporte} - {self.codigo_postal}"
 
     class Meta:
         db_table = 'Informacion Personal'

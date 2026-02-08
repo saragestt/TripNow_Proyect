@@ -39,6 +39,7 @@ class CustomUser(AbstractBaseUser,PermissionsMixin):
     apellidos = models.CharField(max_length=50, null=False, blank=False)  #si lo pongo aqui (mira abajo)
     email = models.EmailField(max_length=100, unique=True, blank=False, null=False)
     info_personal = models.ForeignKey('InfoModel', on_delete=models.CASCADE, null=True, blank=True)
+    prefer_personal = models.ForeignKey('Preferencias', on_delete=models.CASCADE, null=True, blank=True, verbose_name='Preferencias')
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
