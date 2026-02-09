@@ -9,7 +9,7 @@ from Users.models import CustomUser
 
 
 class LoginSerializer(serializers.Serializer):
-    email = serializers.EmailField(max_length=100, required=True)
+    email = serializers.EmailField(max_length=100, required=True) #estos campos deben de estar igual que en models
     password = serializers.CharField(min_length=5, max_length=100, required=True)
 
     class Meta:
@@ -48,7 +48,7 @@ class LoginSerializer(serializers.Serializer):
         email = data.get("email",'')
         password = data.get("password",'')
 
-        user = CustomUser.objects.filter(email=email).first() #si email(rojo) es gual al user lle da el primero
+        user = CustomUser.objects.filter(email=email).first() #si email(rojo) es igual al user le da el primero
 
         if not user:
             raise serializers.ValidationError("No existe el usuario")
