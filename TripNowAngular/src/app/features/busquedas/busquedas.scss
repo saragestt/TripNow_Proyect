@@ -2,7 +2,7 @@
   background-image: url(../../../../public/images/playa1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 400px;
+
 
 }
 
@@ -20,6 +20,7 @@
   font-size: 20px;
   font-weight: normal;
   background-color: #f8f8f8;
+  cursor: pointer;
 
 }
 
@@ -35,25 +36,18 @@
 }
 
 .f-busqueda{
-  background: #ffffff;
-
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(237, 237, 237) 100%);
+  background: #f6f6f6;
 }
 
 .fto{
   width: 240px;
   height: 170px;
-
-
-
-
 }
+
 
 .t-font{
   font-size: 17px;
   font-weight: bold;
-
-
 }
 
 .mas{
@@ -69,15 +63,6 @@
   color: white;
 }
 
-.f-card {
-  background-color: white;
-}
-
-.f-card:hover{
-  border: 2px solid #b9d6ff;
-  background-color: #e2ebff;
-
-}
 
 .f-res{
   border-radius: 30px;
@@ -98,7 +83,55 @@
   background-color: white;
 }
 
+
+
 .card-gente:hover{
   border: 2px solid #83a4fb;
   background-color: #b4c8ff;
+}
+
+.card-category{
+  height: 170px;
+  width: 300px;
+  color: black;
+  background-color: white;
+}
+
+.card-category:hover{
+  border: 2px solid #83a4fb;
+  background: #3d97f2;
+  background: linear-gradient(177deg, rgb(132, 191, 255) 0%, rgba(255, 255, 255, 1) 72%);
+}
+
+
+
+.size-foto{
+  width: 50%;
+}
+
+.btn-cambio{
+  cursor: pointer;
+  color: #9f9f9f;
+}
+
+.btn-cambio:hover{
+  color: black;
+  font-weight: bold;
+}
+
+.caja-v{
+  width: 32%;
+  height: 200px;
+  background-color: white;
+
+}
+
+caja-v:hover{
+  background-color: #8cacff;
+}
+
+.foto-v{
+  width: 50%;
+  height: 200px;
+  border-radius: 15px 1px 1px 15px;
 }
