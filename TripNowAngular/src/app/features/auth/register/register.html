@@ -16,6 +16,9 @@
                         <div class="form-floating caja-input py-0">
                             <input type="email" id="loginEmail" class="form-control rounded-3" placeholder="correo@example.com">
                             <label for="loginEmail" class="form-label m-0 ">Correo electrónico</label>
+                            <div class="invalid-feedback">
+                                Este campo es obligatorio.
+                            </div>
                         </div>
                         <div class="form-floating py-0 position-relative caja-input ">
                             <input type="password" id="passwordLogin" class="form-control rounded-3" placeholder="*********">
@@ -23,6 +26,10 @@
                             <div class="show-password" (click)="TogglePassword($event.currentTarget)">
                                 <i class="bi bi-eye-fill fs-5"></i>
                             </div>
+                            <div class="invalid-feedback">
+                                Este campo es obligatorio.
+                            </div>
+
                         </div>
                         <a class="color-negro my-2">¿Has olvidado tu contraseña?</a>
                         <button class="btn btn-login bg-black text-white rounded-3 p-0">Iniciar sesión</button>
@@ -63,6 +70,9 @@
                         <div class="form-floating caja-input py-0">
                             <input type="text" id="nombre" class="form-control rounded-3" placeholder="Nombre">
                             <label for="nombre" class="form-label m-0 ">Nombre</label>
+                            <div class="invalid-feedback">
+                                Este campo es obligatorio.
+                            </div>
                         </div>
                         <div class="form-floating caja-input py-0">
                             <input type="text" id="apellidos" class="form-control rounded-3" placeholder="Apellidos">
@@ -91,7 +101,7 @@
                         </div>
 
 
-                        <button type="button" class="btn btn-login bg-black text-white rounded-3 p-0">Siguiente</button>
+                        <button type="button" class="btn btn-login bg-black text-white rounded-3 p-0">Finalizar registro</button>
                     </form>
                     <hr class="hr-anch my-3 mt-2">
 

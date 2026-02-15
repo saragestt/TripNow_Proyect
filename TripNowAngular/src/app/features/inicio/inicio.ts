@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+
+
 
 @Component({
   selector: 'app-inicio',
-  imports: [],
+  imports: [
+
+  ],
   templateUrl: './inicio.html',
   styleUrl: './inicio.scss',
+
 })
 export class Inicio {
 
 }
+
+
+
+

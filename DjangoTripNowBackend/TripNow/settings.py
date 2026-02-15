@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # Aplicaciones que vayamos creando
     'Users',
+    'Viajes',
 
 
 ]

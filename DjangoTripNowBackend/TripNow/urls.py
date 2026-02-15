@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import path, include
 
 admin.site.site_header = "TripNow"
 admin.site.site_title = "Administración"
@@ -25,8 +29,12 @@ admin.site.index_title = "Administración 1.0.0"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('Users.urls')), #Aqui poner cada aplicacion creada
-
+    path('api/', include('Viajes.urls')),
 
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

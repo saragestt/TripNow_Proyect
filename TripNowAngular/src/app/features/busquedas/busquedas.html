@@ -1,6 +1,6 @@
-<section class="px-3 pt-3 f-busqueda mt-4 mb-5 pb-5">
+<section class="d-flex flex-column px-3 pt-4 f-busqueda gap-4 pb-5 ">
 
-    <div class=" d-flex flex-column fondo m-5 rounded-4 sombra pb-5 bg-danger mt-5 pt-2 mb-4">
+    <div class=" d-flex flex-column fondo m-5 rounded-4 sombra pb-5  mt-5 pt-2 mb-4">
 
         <div class="d-flex flex-column justify-content-center mb-5 mt-4 pt-4 mx-5 mb-5 ">
             <p class="t-search align-self-center pt-4">Todos tus viajes en un mismo sitio</p>
@@ -56,70 +56,59 @@
         </div>
     </div>
 
-    <p class=" py-4 h5 d-flex justify-content-center mt-5">FILTRAR POR CONTINENTE:</p>
 
-    <div class="d-flex flex-row justify-content-center align-items-center gap-5 mx-5 mb-5 ">
 
+    <!--
+    <div class="d-flex flex-row justify-content-center align-items-center gap-5 mx-5 mb-4 mt-2">
         <div class="btn d-flex flex-column justify-content-center align-items-center rounded-4 sombra card-category pt-3">
             <img src="/images/america.png" class="size-foto">
             <p>America</p>
         </div>
+    </div>
 
-        <div class=" btn d-flex flex-column justify-content-center align-items-center  rounded-4 sombra card-category pt-3">
-            <img src="/images/europa.png" class="size-foto">
-            <p>Europa</p>
-        </div>
+    -->
 
-        <div class="btn d-flex flex-column justify-content-center align-items-center rounded-4 sombra card-category pt-3">
-            <img src="/images/asia.png" class="size-foto">
-            <p>Asia</p>
-        </div>
 
-        <div class="btn d-flex flex-column justify-content-center align-items-center rounded-4 sombra card-category pt-3">
-            <img src="/images/africa.png" class="size-foto">
-            <p>Africa</p>
-        </div>
+    <div class=" d-flex flex-row gap-4 align-self-center">
+        @for (categoria of categorias(); track categoria.slug){
+            <button
+                    class="btn d-flex flex-column text-black align-items-center justify-content-center rounded-4 sombra card-category"
+                    [ngClass]="categoria.slug === optCategoria ? 'pulsado': '' "
+                    (click)="changeCategory(categoria.slug)">
+                {{categoria.nombre}}
+            </button>
+        }
+    </div>
 
-        <div class="btn d-flex flex-column justify-content-center align-items-center rounded-4 sombra card-category pt-3">
-            <img src="/images/oceani.png" class="size-foto">
-            <p>Oceanía</p>
-        </div>
+    <div>
+        <p class="mt-5 h4 d-flex justify-content-center">NUESTROS VIAJES</p>
+        <hr class="mx-5">
     </div>
 
 
-    <p class=" pt-5 h4 d-flex justify-content-center">EUROPA</p>
+    <div class="d-flex flex-row mx-5 justify-content-center">
 
-    <div class="d-flex flex-row">
-        <div class=" d-flex flex-row  pb-5 m-5 sombra caja-v rounded-4 gap-2">
-            <img src="/images/toronto.webp" class="foto-v">
+        @for (viaje of viajes(); track viaje.slug_viaje) {
 
-            <div class="d-flex flex-row mt-4 mx-3 justify-content-center align-items-center gap-2 h6">
-                <p>Madrid</p>
-                <i class="bi bi-arrow-right-short pb-3"></i>
-                <p>Toronto</p>
+            <div [ngClass]="optCategoria !== 'todos' && optCategoria !== viaje.slug_categoria ? 'd-none' : ''"
+                    class=" d-flex flex-row pb-5 m-3 sombra caja-v rounded-4 gap-1 item position-relative overflow-hidden">
+                <img [src]="viaje.imagen" alt="{{viaje.identificador}}" class="foto-v">
+
+                <div class="d-flex flex-column m-auto mt-4 justify-content-center align-self-center">
+                    <p class="m-auto text-primary h6 mt-3">{{viaje.slug_categoria}}</p>
+                    <hr class="pt-0 mt-1">
+
+                    <div class="d-flex flex-row m-auto gap-1 h6 mt-2 opacity-75">
+                        <p>{{viaje.ciudad_salida}}</p>
+                        <i class="bi bi-arrow-right-short pb-3"></i>
+                        <p>{{viaje.ciudad_llegada}}</p>
+                    </div>
+                    <p class="m-auto h5">Desde {{viaje.precio}}€</p>
+                </div>
             </div>
-        </div>
-
-
-        <div class=" d-flex flex-row bg-danger m-5 bg-white sombra caja-v rounded-4">
-            <img src="/images/sidney.webp" class="foto-v">
-            <div class="d-flex flex-row justify-content-center">
-
-            </div>
-        </div>
-
-        <div class=" d-flex flex-row bg-danger m-5 bg-white sombra caja-v rounded-4">
-            <img src="/images/sidney.webp" class="foto-v">
-            <div class="d-flex flex-row justify-content-center">
-
-            </div>
-        </div>
-
-
-
-
-
+        }
     </div>
+
 
 
 
@@ -127,9 +116,12 @@
         <img src="/images/publi1.avif" alt="" class="img-fluid rounded-4 mx-5">
     </div>
 
+    <div>
+        <p class=" pt-5 h4 d-flex justify-content-center">RESEÑAS DE NUESTROS CLIENTES</p>
+        <hr class="mx-5 pb-5">
 
-    <p class=" pt-5 h4 d-flex justify-content-center">RESEÑAS DE NUESTROS CLIENTES</p>
-    <hr class="mx-5 pb-5">
+
+    </div>
 
 
     
