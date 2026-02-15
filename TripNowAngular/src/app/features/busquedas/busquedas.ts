@@ -78,7 +78,7 @@ export class Busquedas implements OnInit{
       })
 
 
-    }, 1500)
+    }, 400)
 
   }
   optCategoria: string = "todos"

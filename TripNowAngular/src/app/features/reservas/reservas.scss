@@ -4,9 +4,28 @@
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(237, 237, 237) 100%);
 }
 
-
-
 .barra{
+  width: 100%;
 
-  width: 600px;
+}
+
+.barra2{
+  width: 196%;
+}
+
+.sombra{
+  box-shadow: rgba(0, 0, 0, 0.32) 5px 5px 5px;
+}
+
+
+.foto-v{
+  width: 45%;
+  height: 100%;
+  border-radius: 1px 15px 15px 1px;
+}
+
+
+.card-reservas{
+  width: 100%;
+  height: 30dvh;
 }

@@ -8,7 +8,7 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                loadComponent: () => import("./features/inicio/inicio").then(c => c.Inicio),
+                loadComponent: () => import("./features/inicio/inicio").then((c => c.Inicio)),
             },
             {
                 path: 'busquedas',
