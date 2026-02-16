@@ -1,0 +1,35 @@
+.f-busqueda{
+  background: #ffffff;
+
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgb(230, 229, 229) 100%);
+}
+
+.foto-sobre{
+  width: 40%;
+  height: 100%;
+  border-radius: 1px 15px 15px 1px;
+}
+
+.card-valores{
+  align-items: center;
+  width: 40%;
+}
+
+.card-valores:hover{
+  background: #000000;
+  color: white;
+}
+
+.sombra{
+  box-shadow: rgba(0, 0, 0, 0.32) 5px 5px 5px;
+}
+
+.cont-sobre{
+  width: 50%;
+}
+
+.cont-no{
+  width: 68%;
+  height: 40dvh;
+
+}
