@@ -2,6 +2,7 @@ import {Component, signal} from '@angular/core';
 import {Idioma} from "../idioma/idioma";
 import {RouterLink} from "@angular/router";
 
+
 @Component({
   selector: 'app-header',
   imports: [
@@ -19,6 +20,16 @@ export class Header {
   toggleIdioma() {
     this.openIdioma.update(state => !state)
   }
+
+
+  idiomaElegido = signal('Español');
+
+  elegirIdioma(e: string) {
+    this.idiomaElegido.set(e);
+  }
+
+
+
 
 
   constructor() {

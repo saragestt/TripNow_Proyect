@@ -8,8 +8,8 @@ class ImagenViaje(models.Model):
 
     class Meta:
         db_table = "imagen_viaje"
-        verbose_name = "Imagen"
-        verbose_name_plural = "Imagenes"
+        verbose_name = "Imagen viaje"
+        verbose_name_plural = "Imagenes viajes"
 
 
     def __str__(self):

@@ -26,7 +26,7 @@ class Viaje(models.Model):
     categoria = models.ForeignKey("Categoria", on_delete=models.SET_NULL, blank=True, null=True, verbose_name="Categoria")
 
     slug = models.SlugField(max_length=100, unique=True, null=True, blank=True, verbose_name="Slug")
-    is_active = models.BooleanField(default=True, verbose_name="¿Está activo?")
+    is_active = models.BooleanField(default=True, verbose_name="Activo")
     creado = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
     actualizado = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización")
 

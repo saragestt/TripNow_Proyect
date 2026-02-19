@@ -1,2 +1,5 @@
 from .viaje_serializer import AddViajeSerializer
 from .categoria_serializer import CategoriaSerializer
+from .categoria_alojamiento_serializer import CategoriaAlojamientoSerializer
+from .alojamiento_serializer import AddAlojamientoSerializer
+from .reseña_serializer import AddReseñaSerializer

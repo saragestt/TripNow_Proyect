@@ -1,6 +1,6 @@
 from django.urls import path
 
-from Viajes.views import AddViajeView, ViajeView, CategoriaView
+from Viajes.views import AddViajeView, ViajeView, CategoriaView, CategoriaAlojamientoView, AddAlojamientoView, AlojamientoView, ReseñaView
 
 urlpatterns = [
     path('crear-viaje/', AddViajeView.as_view()),
@@ -9,4 +9,11 @@ urlpatterns = [
 
     path('categorias/', CategoriaView.as_view()),
 
+    path('categorias-alojamiento/', CategoriaAlojamientoView.as_view()),
+
+    path('todos-alojamientos/', AlojamientoView.as_view()),
+
+    path('crear-alojamiento/', AddAlojamientoView.as_view()),
+
+    path('todos-reseñas/',ReseñaView.as_view() ),
 ]

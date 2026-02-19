@@ -40,7 +40,7 @@ class CustomUser(AbstractBaseUser,PermissionsMixin):
     nombre = models.CharField(max_length=50, null=False, blank=False)
     apellidos = models.CharField(max_length=50, null=False, blank=False)  #si lo pongo aqui (mira abajo)
     email = models.EmailField(max_length=100, unique=True, blank=False, null=False)
-    info_personal = models.ForeignKey('InfoModel', on_delete=models.CASCADE, null=True, blank=True)
+    info_personal = models.ForeignKey('InfoModel', on_delete=models.CASCADE, null=True, blank=True,)
     prefer_personal = models.ManyToManyField('Preferencias', verbose_name='Preferencias')
     paises = models.ManyToManyField('PaisesModel', verbose_name='Paises')
     slug = models.SlugField(max_length=100, unique=True, blank=True, null=True)

@@ -1,0 +1,23 @@
+from django.core.handlers.base import reset_urlconf
+from django.db import models
+
+class ImagenReseñas(models.Model):
+    reseña = models.OneToOneField("ReseñasModel", on_delete=models.CASCADE, related_name="Imagen_reseña")
+    imagen = models.ImageField(upload_to="images/", verbose_name="Imagen", blank=False, null=False)
+    creado = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
+    actualizado = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización")
+
+    class Meta:
+        db_table = "imagen_reseña"
+        verbose_name = "Imagen reseña"
+        verbose_name_plural = "Imagenes reseñas"
+
+    def __str__(self):
+        return self.reseña.identificador
+
+    def save(self, *args, **kwargs):
+        if self.imagen:
+            nombre_imagen = self.reseña.slug
+            extension_imagen = self.imagen.name.split(".")[-1]
+            self.imagen.name = f"{nombre_imagen}.{extension_imagen}"
+        super().save(*args, **kwargs)

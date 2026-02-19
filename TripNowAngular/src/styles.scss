@@ -3,6 +3,8 @@
 @use './styles/bootstrap-custom';
 @use './styles/theme' as th;
 @import "../public/icons/bootstrap-icons.css";
+@import "bootstrap/dist/css/bootstrap.min.css";
+
 
 @include th.apply-theme();
 

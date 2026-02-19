@@ -1,8 +1,14 @@
-<section class="d-flex flex-column px-3 pt-4 f-busqueda gap-4 pb-5 ">
+<section class="d-flex flex-column px-3 pt-1 f-busqueda gap-4 ">
 
-    <div class=" d-flex flex-column fondo m-5 rounded-4 sombra pb-5  mt-5 pt-2 mb-4">
+    <div class="b-carrusel container-fluid" >
+        <div class="logos-t text-white pt-3 h6 gap-5 bg-black opacity-25">
+            <p *ngFor="let c of carrusel">{{c}}</p>
+        </div>
+    </div>
 
-        <div class="d-flex flex-column justify-content-center mb-5 mt-4 pt-4 mx-5 mb-5 ">
+    <div class=" d-flex flex-column fondo m-5 rounded-4 sombra pb-5 mt-5 pt-2 mb-4 ">
+
+        <div class="d-flex flex-column justify-content-center mb-5 mt-4 pt-4 mx-5 mb-5">
             <p class="t-search align-self-center pt-4">Todos tus viajes en un mismo sitio</p>
             <div>
                 <div class="d-flex flex-column bg-white mx-5 sombra rounded-4 justify-content-center mt-3">
@@ -57,41 +63,29 @@
     </div>
 
 
+    <div>
+        <p class="mt-5 h4 d-flex justify-content-center">NUESTROS VIAJES</p>
 
-    <!--
-    <div class="d-flex flex-row justify-content-center align-items-center gap-5 mx-5 mb-4 mt-2">
-        <div class="btn d-flex flex-column justify-content-center align-items-center rounded-4 sombra card-category pt-3">
-            <img src="/images/america.png" class="size-foto">
-            <p>America</p>
-        </div>
     </div>
-
-    -->
-
 
     <div class=" d-flex flex-row gap-4 align-self-center">
         @for (categoria of categorias(); track categoria.slug){
             <button
-                    class="btn d-flex flex-column text-black align-items-center justify-content-center rounded-4 sombra card-category"
-                    [ngClass]="categoria.slug === optCategoria ? 'pulsado': '' "
-                    (click)="changeCategory(categoria.slug)">
+                    class="btn d-flex flex-column  align-items-center justify-content-center rounded-5 sombra card-category"
+                    [ngClass]="categoria.slug === elegir_categoria_viaje ? 'pulsado': '' "
+                    (click)="cambiarCategoriaViaje(categoria.slug)">
                 {{categoria.nombre}}
             </button>
         }
     </div>
 
-    <div>
-        <p class="mt-5 h4 d-flex justify-content-center">NUESTROS VIAJES</p>
-        <hr class="mx-5">
-    </div>
 
-
-    <div class="d-flex flex-row mx-5 justify-content-center">
+    <div class="viajes-box mx-5  ">
 
         @for (viaje of viajes(); track viaje.slug_viaje) {
 
-            <div [ngClass]="optCategoria !== 'todos' && optCategoria !== viaje.slug_categoria ? 'd-none' : ''"
-                    class=" d-flex flex-row pb-5 m-3 sombra caja-v rounded-4 gap-1 item position-relative overflow-hidden">
+            <div [ngClass]="elegir_categoria_viaje !== 'todos' && elegir_categoria_viaje !== viaje.slug_categoria ? 'd-none' : ''"
+                    class=" d-flex flex-row pb-5 sombra caja-v rounded-4 gap-1 pt-0 pt-0 ps-0 btn bg-white">
                 <img [src]="viaje.imagen" alt="{{viaje.identificador}}" class="foto-v">
 
                 <div class="d-flex flex-column m-auto mt-4 justify-content-center align-self-center">
@@ -109,52 +103,61 @@
         }
     </div>
 
-
-
-
-    <div class="d-flex justify-content-center mx-5">
-        <img src="/images/publi1.avif" alt="" class="img-fluid rounded-4 mx-5">
+    <div class="pt-4">
+        <p class="mt-5 h4 d-flex justify-content-center">NUESTROS ALOJAMIENTOS</p>
     </div>
 
-    <div>
-        <p class=" pt-5 h4 d-flex justify-content-center">RESEÑAS DE NUESTROS CLIENTES</p>
-        <hr class="mx-5 pb-5">
-
-
+    <div class=" d-flex flex-row gap-4 align-self-center">
+        @for (categoria_alo of categorias_alojamiento(); track categoria_alo.slug){
+            <button
+                    class="btn d-flex flex-column  align-items-center justify-content-center rounded-5 sombra card-category"
+                    [ngClass]="categoria_alo.slug === elegir_categoria_alojamiento ? 'pulsado': '' "
+                    (click)="cambiarCategoriaAlomiento(categoria_alo.slug)">
+                {{categoria_alo.nombre}}
+            </button>
+        }
     </div>
+
+    <div class="aloja-box mx-5">
+
+        @for (alojamiento of alojamientos(); track alojamiento.slug_alojamiento) {
+
+            <div [ngClass]="elegir_categoria_alojamiento !== 'todos' && elegir_categoria_alojamiento !== alojamiento.slug_categoria_alojamiento ? 'd-none' : ''"
+                 class=" d-flex flex-row  sombra caja-v rounded-4 gap-1 pt-0 pt-0 ps-0 btn bg-white">
+                <img [src]="alojamiento.imagen" alt="{{alojamiento.identificador}}" class="foto-a pt-0 mt-0">
+
+                <div class="d-flex flex-column m-auto mt-4 justify-content-center align-self-center">
+                    <p class="m-auto text-primary h6 mt-3">{{alojamiento.slug_categoria_alojamiento}}</p>
+                    <hr class="pt-0 mt-1">
+
+                    <div class="d-flex flex-row m-auto gap-1 h6 mt-2 opacity-75">
+                        <p>{{alojamiento.nombre_alojamiento}}</p>
+                        <p>,</p>
+                        <p>{{alojamiento.ciudad}}</p>
+                    </div>
+
+
+                    <p class="m-auto h5">Desde {{alojamiento.precio}}€</p>
+                </div>
+            </div>
+        }
+    </div>
+
+
+   <div class="b-carrusel container-fluid ">
+       <div class="logos-t opacity-25 ">
+           <img src="/images/logosAerolineas.png" >
+           <img src="/images/logosAerolineas.png">
+       </div>
+   </div>
+
+
+
+
 
 
     
-    <div class="d-flex flex-row  justify-content-center gap-5 ">
 
-        <div class="">
-            <img src="/images/reseña-f.jpg" class="f-res sombra">
-        </div>
-
-
-        <div class="d-flex flex-row p-4 rounded-4 card-gente sombra mt-5 gap-4 ">
-            <div class="pt-4 ps-3">
-                <img src="/images/gente1.jpg" class="rounded-circle f-gente sombra">
-            </div>
-
-            <div class="d-flex flex-column">
-                <div class="d-flex flex-column justify-content-center ">
-                    <p class="h4 align-self-center">Paula M.</p>
-                    <hr class="m-2">
-                    <p class="align-self-center ts-4">La mejor pagina para mochileros, tienen vuelos super baratos y te conectan con un montón de hostales. </p>
-                    <div class="d-flex flex-row justify-content-center">
-                        <i class="bi bi-star-fill h4"></i>
-                        <i class="bi bi-star-fill h4"></i>
-                        <i class="bi bi-star-fill h4"></i>
-                        <i class="bi bi-star-fill h4"></i>
-                        <i class="bi bi-star-fill h4"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
 
 
 

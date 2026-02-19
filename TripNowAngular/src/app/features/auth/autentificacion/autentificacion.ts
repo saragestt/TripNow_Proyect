@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-autentificacion',
   imports: [
       ReactiveFormsModule,
       FormsModule,
   ],
-  templateUrl: './register.html',
-  styleUrl: './register.scss',
+  templateUrl: './autentificacion.html',
+  styleUrl: './autentificacion.scss',
   standalone: true
 })
-export class Register {
+export class Autentificacion {
 
   TogglePassword(elementPresionado: any){
 

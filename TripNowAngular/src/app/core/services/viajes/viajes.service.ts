@@ -26,5 +26,17 @@ export class ViajesService {
       return this.http.get<any>(`${this.URL}/categorias/`);
   }
 
+  getCategoriasAlojamiento(): Observable<any>{
+      return this.http.get<any>(`${this.URL}/categorias-alojamiento/`);
+  }
+
+  getAlojamientos(): Observable<any>{
+      return this.http.get<any>(`${this.URL}/todos-alojamientos/`);
+  }
+
+  getReseñas(): Observable<any>{
+      return this.http.get<any>(`${this.URL}/todos-reseñas/`)
+  }
+
 
 }
