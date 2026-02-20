@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Alertas } from './alertas';
+import { Qr } from './qr';
 
-describe('Alertas', () => {
-  let component: Alertas;
-  let fixture: ComponentFixture<Alertas>;
+describe('Qr', () => {
+  let component: Qr;
+  let fixture: ComponentFixture<Qr>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Alertas]
+      imports: [Qr]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Alertas);
+    fixture = TestBed.createComponent(Qr);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

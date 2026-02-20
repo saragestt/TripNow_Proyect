@@ -1,0 +1,40 @@
+<section class="f-busqueda">
+
+    <div id="carouselExample" class="carousel slide ">
+        <div class="carousel-inner p-5">
+            @for (resenia of resenias(); track resenia.slug_resenia){
+            <div class="carousel-item active">
+                <div class=" container bg-white cont-resenia  m-auto d-flex sombra  flex-row my-5 rounded-4 justify-content-center px-0">
+                    <img src="{{resenia.imagen}}" class="img-resenia m-4 rounded-3 img-fluid ">
+                    <div class="d-flex flex-column justify-content-center align-self-center m-auto px-5">
+                        <p class="h4">{{resenia.usuario}}, {{resenia.alojamiento}}</p>
+                        <hr class="text-black mt-0">
+                        <p class=" pt-2">{{resenia.descripcion}}</p>
+                        <div class="d-flex flex-row h2 justify-content-center gap-2">
+                        @for (estrella of estrellas; track estrella){
+
+                            <i class="bi" [ngClass]="estrella <= resenia.puntuacion  ? 'bi bi-star-fill': 'bi bi-star' "></i>
+
+                        }
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            }
+
+        </div>
+        <button class="carousel-control-prev bg-black flechas" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+            <span class="visually-hidden ">Previous</span>
+        </button>
+        <button class="carousel-control-next bg-black flechas" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon " aria-hidden="true"></span>
+            <span class="visually-hidden ">Next</span>
+        </button>
+    </div>
+
+
+</section>

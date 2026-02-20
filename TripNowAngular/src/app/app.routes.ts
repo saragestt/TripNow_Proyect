@@ -26,11 +26,6 @@ export const routes: Routes = [
                 title: "reservas",
             },
             {
-                path: 'notificaciones',
-                loadComponent: () => import('./features/notificaciones/notificaciones').then((c => c.Notificaciones)),
-                title: "notificaciones",
-            },
-            {
                 path: 'autentificacion',
                 loadComponent: () => import('./features/auth/autentificacion/autentificacion').then((c => c.Autentificacion)),
             },
@@ -41,6 +36,10 @@ export const routes: Routes = [
             {
                 path: 'contacto',
                 loadComponent: () => import('./features/contacto/contacto').then((c => c.Contacto)),
+            },
+            {
+                path: 'resenias',
+                loadComponent: () => import('./features/resenias/resenias').then((c => c.Resenias)),
             }
 
 

@@ -34,9 +34,11 @@ export class ViajesService {
       return this.http.get<any>(`${this.URL}/todos-alojamientos/`);
   }
 
-  getReseñas(): Observable<any>{
-      return this.http.get<any>(`${this.URL}/todos-reseñas/`)
+  getResenias(): Observable<any>{
+      return this.http.get<any>(`${this.URL}/todos-resenias/`)
   }
+
+
 
 
 }

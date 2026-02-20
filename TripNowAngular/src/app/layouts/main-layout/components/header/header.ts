@@ -1,13 +1,15 @@
 import {Component, signal} from '@angular/core';
-import {Idioma} from "../idioma/idioma";
+
 import {RouterLink} from "@angular/router";
+import {Qr} from "../qr/qr";
 
 
 @Component({
   selector: 'app-header',
   imports: [
-    Idioma,
-    RouterLink
+
+    RouterLink,
+    Qr
   ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
@@ -15,10 +17,12 @@ import {RouterLink} from "@angular/router";
 export class Header {
 
   usuarioLoggeado = signal<boolean>(true)
-  openIdioma = signal<boolean>(false);
 
-  toggleIdioma() {
-    this.openIdioma.update(state => !state)
+  abrirQR = signal<boolean>(false);
+
+
+  toggleQR(){
+    this.abrirQR.update(state => !state)
   }
 
 

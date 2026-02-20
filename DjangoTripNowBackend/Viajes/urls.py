@@ -15,5 +15,5 @@ urlpatterns = [
 
     path('crear-alojamiento/', AddAlojamientoView.as_view()),
 
-    path('todos-reseñas/',ReseñaView.as_view() ),
+    path('todos-resenias/',ReseñaView.as_view() ),
 ]

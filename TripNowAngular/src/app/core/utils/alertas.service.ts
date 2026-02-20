@@ -22,7 +22,7 @@ export class AlertasService {
 
   confirm(title: string,
           description: string,
-          confirmText: string = "¿Esta seguro?",
+          confirmText: string = "¿Seguro que desea cancelar?",
           cancelText: string = "Cancelar",
           icon: "warning" | "info" | "error" | "success"): void {
   }

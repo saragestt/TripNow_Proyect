@@ -45,15 +45,6 @@ interface AlojamientosInterface {
   imagen: string;
 }
 
-interface ReseñasInterface {
-  identificador: string;
-  alojamiento: string;
-  slug_resenia: string;
-  descripcion: string;
-  puntuacion: number;
-  imagen: string;
-
-}
 
 
 
@@ -75,7 +66,7 @@ export class Busquedas implements OnInit{
   categorias_alojamiento = signal<CategoriasAlojamientosInterface[]>([])
 
   alojamientos = signal<AlojamientosInterface[]>([])
-  resenias = signal<ReseñasInterface[]>([])
+
 
 
   constructor(
@@ -130,15 +121,6 @@ export class Busquedas implements OnInit{
       this.viajesService.getCategoriasAlojamiento().subscribe({
         next: response => {
           this.categorias_alojamiento.set(response.data);
-        },
-        error: error => {
-          console.log(error);
-        }
-      })
-
-      this.viajesService.getReseñas().subscribe({
-        next: response => {
-          this.resenias.set(response.data);
         },
         error: error => {
           console.log(error);
